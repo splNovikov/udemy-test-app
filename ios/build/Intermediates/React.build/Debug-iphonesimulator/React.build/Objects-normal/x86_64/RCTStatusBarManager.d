@@ -1,0 +1,23 @@
+dependencies: \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Modules/RCTStatusBarManager.m \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Modules/RCTStatusBarManager.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Base/RCTConvert.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Views/RCTAnimationType.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Users/pnovikov/Projects/udemy-native-app/ios/bin/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/pnovikov/Projects/udemy-native-app/ios/bin/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/pnovikov/Projects/udemy-native-app/ios/bin/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Modules/RCTEventEmitter.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/pnovikov/Projects/udemy-native-app/node_modules/react-native/React/Base/RCTEventDispatcher.h
