@@ -8,10 +8,11 @@ import PickLocation from '../../components/PickLocation/PickLocation';
 import PlaceInput from '../../components/PlaceInput/PlaceInput';
 import MainText from '../../components/UI/MainText/MainText';
 import HeadingText from '../../components/UI/HeadingText/HeadingText';
+import validate from '../../utility/validation';
 
 
 const mapDispatchToProps = dispatch => ({
-  onPlaceAdded: placeName => dispatch(addPlace(placeName))
+  onAddPlace: placeName => dispatch(addPlace(placeName))
 });
 
 @connect(null, mapDispatchToProps)
@@ -21,7 +22,16 @@ class SharePlaceScreen extends Component {
   };
 
   state = {
-    placeName: ''
+    controls: {
+      placeName: {
+        value: '',
+        valid: false,
+        touched: false,
+        validationRules: {
+          notEmpty: true
+        }
+      }
+    }
   };
 
   constructor(props) {
@@ -40,18 +50,26 @@ class SharePlaceScreen extends Component {
     }
   };
 
-  placeNameChangedHandler = value => {
-    this.setState({
-      placeName: value
+  placeNameChangedHandler = val => {
+    this.setState(prevState => {
+      return {
+        controls: {
+          ...prevState.controls,
+          placeName: {
+            ...prevState.controls.placeName,
+            value: val,
+            valid: validate(val, prevState.controls.placeName.validationRules),
+            touched: true
+          }
+        }
+      };
     });
   };
 
   placeAddedHandler = () => {
-    if (!this.state.placeName.trim()) {
-      return;
+    if (this.state.controls.placeName.value.trim() !== '') {
+      this.props.onAddPlace(this.state.controls.placeName.value);
     }
-
-    this.props.onPlaceAdded(this.state.placeName);
   };
 
   render() {
@@ -59,17 +77,20 @@ class SharePlaceScreen extends Component {
       <ScrollView>
         <View style={styles.container}>
           <MainText>
-            <HeadingText>
-              Share a place with us!
-            </HeadingText>
+            <HeadingText>Share a Place with us!</HeadingText>
           </MainText>
           <PickImage />
           <PickLocation />
-          <PlaceInput placeName={this.state.placeName}
-                      onChangeText={this.placeNameChangedHandler}/>
-
+          <PlaceInput
+            placeData={this.state.controls.placeName}
+            onChangeText={this.placeNameChangedHandler}
+          />
           <View style={styles.button}>
-            <Button title='Share the place!' onPress={this.placeAddedHandler} />
+            <Button
+              title='Share the Place!'
+              onPress={this.placeAddedHandler}
+              disabled={!this.state.controls.placeName.valid}
+            />
           </View>
         </View>
       </ScrollView>
@@ -82,8 +103,19 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center'
   },
+  placeholder: {
+    borderWidth: 1,
+    borderColor: 'black',
+    backgroundColor: '#eee',
+    width: '80%',
+    height: 150
+  },
   button: {
     margin: 8
+  },
+  previewImage: {
+    width: '100%',
+    height: '100%'
   }
 });
 
